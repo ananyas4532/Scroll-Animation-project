@@ -7,7 +7,7 @@ const App = () => {
       <HeroSection />
 
       
-      <div className="h-[200vh] bg-gray-100"></div>
+      
     </div>
   );
 };
