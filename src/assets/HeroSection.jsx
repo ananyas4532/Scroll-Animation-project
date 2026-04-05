@@ -30,7 +30,7 @@ const HeroSection = () => {
 
   useGSAP(() => {
     const mainTrack = gsap.to(scrollRef.current, {
-      x: "-350vw",
+     x: () => `-${(cardData.length - 1) * 100}vw`,
       ease: "none",
       scrollTrigger: {
         trigger: triggerRef.current,
@@ -120,7 +120,7 @@ const HeroSection = () => {
   return (
     <div 
       ref={triggerRef} 
-      className="relative h-screen w-full overflow-hidden 
+      className="relative h-screen w-full overflow-x-hidden overflow-y-hidden 
       bg-gradient-to-br from-[#001a14] via-[#002a22] to-[#000f0b]"
     >
 
@@ -143,7 +143,7 @@ flex flex-col items-center gap-2 z-50">
 </div>
 
       <div ref={revealtextRef} className='absolute inset-0 flex flex-col items-center justify-center z-10'>
-        <h2 className='text-[14vw] font-black text-[#14f1a6] drop-shadow-[0_0_25px_rgba(20,241,166,0.35)] leading-none text-center uppercase italic'>
+        <h2 className='text-[text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[6vw]] font-black text-[#14f1a6] drop-shadow-[0_0_25px_rgba(20,241,166,0.35)] leading-none text-center uppercase italic'>
           Welcome to ITZFIZZ
         </h2>
 
@@ -166,12 +166,13 @@ flex flex-col items-center gap-2 z-50">
       <div
   ref={scrollRef}
   className="relative z-10 flex h-full items-center pointer-events-none perspective-[1200px]"
-  style={{ width: "600vw", paddingLeft: "100vw" }}
+  style={{ width: `${cardData.length * 100}vw`, paddingLeft: "100vw" }}
 >
         {Colors.map((color, index) => (
           <div
             key={index}
-            className={`Hero-box ${color} w-[220px] h-[300px] md:w-[280px] md:h-[360px] lg:w-[320px] lg:h-[420px] mx-4 md:mx-8 lg:mx-12 shrink-0
+            className={`Hero-box ${color}w-[180px] h-[240px] 
+sm:w-[220px] sm:h-[300px] md:w-[260px] md:h-[340px] lg:w-[320px] lg:h-[420px] mx-4 md:mx-8 lg:mx-12 shrink-0
             rounded-[28px] bg-white/10 backdrop-blur-md
             border border-white/20
             shadow-[0_40px_80px_rgba(0,0,0,0.45)]
