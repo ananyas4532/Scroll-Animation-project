@@ -43,6 +43,16 @@ const HeroSection = () => {
         invalidateOnRefresh: true,
       }
     });
+    gsap.to(".scroll-popup", {
+  opacity: 0,
+  y: -20,
+  scrollTrigger: {
+    trigger: scrollRef.current,
+    start: "left left",
+    end: "left+=300 left",
+    scrub: true
+  }
+});
 
     const boxes = gsap.utils.toArray(".Hero-box");
 
@@ -119,8 +129,9 @@ const HeroSection = () => {
       rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10" />
 
      
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-flex flex-col items-center gap-2 z-30">
+      <div className="scroll-popup absolute top-1/2 left-1/2 
+-translate-x-1/2 -translate-y-1/2 
+flex flex-col items-center gap-2 z-50">
         <span className="text-white text-sm tracking-widest opacity-80">
           Scroll Down
         </span>
@@ -129,7 +140,7 @@ flex flex-col items-center gap-2 z-30">
         </div>
       </div>
 
-      <div ref={revealtextRef} className='absolute inset-0 flex flex-col items-center justify-center z-0'>
+      <div ref={revealtextRef} className='absolute inset-0 flex flex-col items-center justify-center z-10'>
         <h2 className='text-[12vw] font-black text-[#14f1a6] drop-shadow-[0_0_25px_rgba(20,241,166,0.35)] leading-none text-center uppercase italic'>
           Welcome to ITZFIZZ
         </h2>
