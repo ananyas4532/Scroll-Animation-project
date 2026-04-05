@@ -37,7 +37,7 @@ const HeroSection = () => {
         pin: true,
         scrub: 1,
         start: "top top",
-        end: "+=5000",
+        end: "+=4000",
         anticipatePin: 1,
         fastScrollEnd: true,
         invalidateOnRefresh: true,
@@ -129,26 +129,27 @@ const HeroSection = () => {
       rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10" />
 
      
-      <div className="scroll-popup absolute top-1/2 left-1/2 
+     <div className="scroll-popup absolute top-1/2 left-1/2 
 -translate-x-1/2 -translate-y-1/2 
 flex flex-col items-center gap-2 z-50">
-        <span className="text-white text-sm tracking-widest opacity-80">
-          Scroll Down
-        </span>
-        <div className="w-6 h-10 border-2 border-[#14f1a6] rounded-full flex justify-center p-1">
-          <div className="w-1.5 h-3 bg-[#14f1a6] rounded-full animate-bounce"></div>
-        </div>
-      </div>
+
+  <span className="text-white text-sm md:text-base tracking-widest opacity-80">
+    Scroll Down
+  </span>
+
+  <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-[#14f1a6] rounded-full flex justify-center p-1">
+    <div className="w-1.5 h-3 bg-[#14f1a6] rounded-full animate-bounce"></div>
+  </div>
+</div>
 
       <div ref={revealtextRef} className='absolute inset-0 flex flex-col items-center justify-center z-10'>
-        <h2 className='text-[12vw] font-black text-[#14f1a6] drop-shadow-[0_0_25px_rgba(20,241,166,0.35)] leading-none text-center uppercase italic'>
+        <h2 className='text-[14vw] font-black text-[#14f1a6] drop-shadow-[0_0_25px_rgba(20,241,166,0.35)] leading-none text-center uppercase italic'>
           Welcome to ITZFIZZ
         </h2>
 
-        <p className="mt-6 text-lg text-emerald-200 tracking-wide opacity-90">
-          Scroll-driven animations crafted with React, GSAP & Tailwind
-        </p>
-
+        <p className="mt-6 text-sm md:text-lg text-emerald-200 tracking-wide opacity-90">
+  Scroll-driven animations crafted with React, GSAP & Tailwind
+</p>
         <div className="mt-10 px-6 py-4 border border-[#14f1a6]/40 rounded-xl
         text-white uppercase text-sm font-bold tracking-widest
         cursor-pointer backdrop-blur-md bg-white/5
@@ -163,14 +164,14 @@ flex flex-col items-center gap-2 z-50">
       </div>
 
       <div
-        ref={scrollRef}
-        className="relative z-10 flex h-full items-center pointer-events-none perspective-[1200px]"
-        style={{ width: "450vw", paddingLeft: "100vw" }}
-      >
+  ref={scrollRef}
+  className="relative z-10 flex h-full items-center pointer-events-none perspective-[1200px]"
+  style={{ width: "600vw", paddingLeft: "100vw" }}
+>
         {Colors.map((color, index) => (
           <div
             key={index}
-            className={`Hero-box ${color} w-[320px] h-[420px] mx-12 shrink-0
+            className={`Hero-box ${color} w-[220px] h-[300px] md:w-[280px] md:h-[360px] lg:w-[320px] lg:h-[420px] mx-4 md:mx-8 lg:mx-12 shrink-0
             rounded-[28px] bg-white/10 backdrop-blur-md
             border border-white/20
             shadow-[0_40px_80px_rgba(0,0,0,0.45)]
